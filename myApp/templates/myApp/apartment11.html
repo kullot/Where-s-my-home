@@ -1,0 +1,109 @@
+{% extends 'myApp/base_apartment.html' %}
+{% block content %}
+                {% for apartment_name, year, address, household, dong, flat,d_price,c_price, area, floor, amount, day, url, i_url in data_list %}
+
+
+                        <div class="col mb-5">
+                            <div class="card h-100" style = "width: 250px; height: 200px" >
+                                <!-- Product image-->
+                                <img class="card-img-top" src="{{i_url}}" alt="이미지 준비중..." style="width: 248px; height: 200px"/>
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">{{apartment_name}}</h5>
+                                        <!-- Product price-->
+                                        {{address}} 
+                                    </div>
+                                </div>
+                                {% comment %} <!-- Product actions-->
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown button
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+
+                                
+
+
+
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Detail</a></div> {% endcomment %}
+                                        <!-- Button to Open the Modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal{{ forloop.counter0 }}" >
+                                            상세정보
+                                        </button>
+                                        <!-- The Modal -->
+                                        <div class="modal fade" id="mymodal{{ forloop.counter0 }}">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                            
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                <h4 class="modal-title">상세정보</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                
+                                                <!-- Modal body -->
+
+                                                <div class="modal-body">
+                                                    아파트이름 : {{apartment_name}}<br>
+                                                    건축년도 : {{year}}<br>
+                                                    위치 : {{address}}<br>
+                                                    세대수 : {{household}}<br>
+                                                    동 갯수 : {{dong}}<br>
+                                                    면적 : {{flat}}<br>
+                                                    매매가격 : {{d_price}}<br>
+                                                    전세 가격 : {{c_price}}<br>
+                                                    실면적 : {{area}}<br>
+                                                    층 : {{floor}}<br>
+                                                    실거래가(단위: 만 원) : {{amount}}<br>
+                                                    거래날짜 : {{day}}
+                                                    
+
+                                                </div>
+                                                
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-success" onclick="window.open('{{url}}');" data-dismiss="modal">네이버 페이지</button>
+                                                    <button type="button" class="btn btn-primary" onclick="window.open('링크주소');" data-dismiss="modal">상세페이지</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                {% comment %} </div> {% endcomment %}
+                            </div>
+                        </div>
+                    <!-- The Modal -->
+                                        <div class="modal fade" id="myModal">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                            
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                <h4 class="modal-title">상세정보</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                
+                                                <!-- Modal body -->
+                                                <div class="modal-body"> 
+
+                                                    {{apartment_name}} {{year}} {{address}} {{household}} {{dong}} {{flat}}{{d_price}}{{c_price}} {{url}}
+                                                </div>
+                                                
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                {% endfor %}
+            {% endblock %}

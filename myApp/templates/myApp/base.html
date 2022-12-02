@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>템플릿 상속</title>
+    <!-- 부트스트랩 -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h1>
+        <br>
+        내집 어디있조?
+        <br>
+    </h1>
+    <!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/myApp/home/" style="color:white">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/myApp/apartment/" style="color:white">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/myApp/search/" style="color:white">Search</a>
+      </li>
+      
+    </ul>
+  </nav>
+          <!-- Header-->
+          <header class="bg-dark py-5" >
+            <img src="/static/myApp/dari.jpg" class="rounded mx-auto d-block">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">부산광역시 재건축 아파트</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">우리 함께 찾아보조!</p>
+                </div>
+            </div>
+          </header>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+        <!-- 교체 영역  -->
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+</section>
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+<div class="container">
+    <p class="m-0 text-center text-white">우리 잘했조!</p>
+    <br>
+    <br>
+    <table class="text-white center">
+        <tbody>
+        <tr>
+            <th>팀장&nbsp;&nbsp;</th>
+            <td>이상민</td>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;메인PD&nbsp;&nbsp;</th>
+            <td>안진우</td>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;메인작가&nbsp;&nbsp;</th>
+            <td>이도희</td>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;알바&nbsp;&nbsp;</th>
+            <td>정용건</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+
+# csv => 데이타프레임 => 넘파이 => 리스트 => 컨텍스트 => 웹페이지
+    df = pd.read_csv('myApp/data/final_final.csv', encoding='cp949')
+
+    test_df = final[(final['아파트명'].str.contains('삼익')) & (final['건축일'].str.contains('1978'))& (final['면적'].str.contains('78.31')) ] 
+    a = plt.figure(figsize = (20,5))
+    plt.plot(test_df['거래일자'], test_df['실거래가(만원)'], label= 'deal_day' )
+    plt.scatter(test_df['거래일자'], test_df['실거래가(만원)'], label= 'deal_day' )
+    plt.legend()
+    plt.show()
+
+
+    
+    context = {
+                'data_list_list' : a
+                }

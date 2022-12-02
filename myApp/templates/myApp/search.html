@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>템플릿 상속</title>
+    <!-- 부트스트랩 -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h1>
+        <br>
+        내집 어디있조?
+        <br>
+    </h1>
+    <!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/myApp/home/" style="color:white">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/myApp/apartment/" style="color:white">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/myApp/search/" style="color:white">Search</a>
+      </li>
+
+    </ul>
+  </nav>
+
+          <!-- Header-->
+          <header class="bg-dark py-5" >
+            <img src="/static/myApp/dari.jpg" class="rounded mx-auto d-block">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">부산광역시 재건축 아파트</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">우리 함께 찾아보조!</p>
+                </div>
+            </div>
+          </header>
+ <div class="container">
+   <h2>국토부 재건축 아파트 정보</h2>
+   <p>년/월 순서로 입력하시오:</p>
+   <form action="/myApp/searchCon">
+     <div class="form-group">
+        <label for="sel3">Select list (select one):</label>
+        <select class="form-control" id="sel3" name="sellist3">
+            <option>강서구 26440</option>
+            <option>금정구 26410</option>
+            <option>기장군 26710</option>
+            <option>남구 26290</option>
+            <option>동구 26170</option>
+            <option>동래구 26260</option>
+            <option>부산진구 26230</option>
+            <option>북구 26320</option>
+            <option>사상구 26530</option>
+            <option>사하구 26380</option>
+            <option>서구 26140</option>
+            <option>수영구 26500</option>
+            <option>연제구 26470</option>
+            <option>영도구 26200</option>
+            <option>중구 26110</option>
+            <option>해운대구 26350</option>
+        </select>
+       <label for="sel1">년도 선택:</label>
+       <select class="form-control" id="sel1" name="sellist1">
+         <option>2020</option>
+         <option>2021</option>
+         <option>2022</option>
+       </select>
+       <br>
+       <label for="sel2">월 선택:</label>
+       <select multiple class="form-control" id="sel2" name="sellist2">
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+       </select>
+     </div>
+     <button type="submit" class="btn btn-primary">Submit</button>
+   </form>
+ </div>
+ <footer class="py-5 bg-dark">
+  <div class="container">
+      <p class="m-0 text-center text-white">우리 잘했조!</p>
+      <br>
+      <br>
+      <table class="text-white center">
+          <tbody>
+          <tr>
+              <th>팀장&nbsp;&nbsp;</th>
+              <td>이상민</td>
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;메인PD&nbsp;&nbsp;</th>
+              <td>안진우</td>
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;메인작가&nbsp;&nbsp;</th>
+              <td>이도희</td>
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;알바&nbsp;&nbsp;</th>
+              <td>정용건</td>
+          </tr>
+          </tbody>
+      </table>
+  
+  </div>
+  </footer>
+  </body>
+  </html>
